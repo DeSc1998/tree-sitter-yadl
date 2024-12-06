@@ -26,7 +26,7 @@ module.exports = grammar({
       $._line_end),
 
     return_statement: $ => seq("return", $._expression),
-    assignment: $ => seq($.identifier, "=", $._expression),
+    assignment: $ => seq(field("name", $.identifier), "=", $._expression),
 
     if_statement: $ => seq(
       $._initial_if_branch,
@@ -41,9 +41,9 @@ module.exports = grammar({
     while_loop: $ => seq("while", $.condition, $.code_block),
 
     function_call: $ => seq(
-      $.identifier, "(", optional($._call_args) ,")"
+      field("name", $.identifier), "(", optional($.call_args) ,")"
     ),
-    _call_args: $ => prec(9, seq( $._expression, repeat(seq(",", $._expression)))),
+    call_args: $ => prec(9, seq( $._expression, repeat(seq(",", $._expression)))),
 
     code_block: $ => seq("{", repeat($._statement), "}"),
 

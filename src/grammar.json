@@ -199,7 +199,7 @@
           "members": [
             {
               "type": "SYMBOL",
-              "name": "_call_args"
+              "name": "call_args"
             },
             {
               "type": "BLANK"
@@ -212,7 +212,7 @@
         }
       ]
     },
-    "_call_args": {
+    "call_args": {
       "type": "PREC",
       "value": 9,
       "content": {
