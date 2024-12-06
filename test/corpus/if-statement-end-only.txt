@@ -1,0 +1,20 @@
+=======
+if statement (end only)
+=======
+
+if (true) {
+  aoeu = 42
+} else {}
+
+-----
+
+(source_file
+  (if_statement
+    (condition (boolean))
+    (code_block
+      (assignment
+        (identifier)
+        (number)))
+    (code_block)
+    )
+  )

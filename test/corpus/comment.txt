@@ -1,0 +1,9 @@
+=======
+comment
+=======
+
+// test comment
+
+-----
+
+(source_file)

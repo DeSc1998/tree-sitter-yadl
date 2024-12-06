@@ -1,0 +1,12 @@
+=======
+assignment statement
+=======
+
+aoeu = 42
+
+-----
+
+(source_file
+  (assignment
+    (identifier)
+    (number)))

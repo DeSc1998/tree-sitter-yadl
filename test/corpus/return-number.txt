@@ -1,0 +1,10 @@
+=======
+return statement with number
+=======
+
+return 42
+
+-----
+
+(source_file
+  (return_statement (number)))
