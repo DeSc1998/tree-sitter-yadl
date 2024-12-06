@@ -5,8 +5,9 @@
       "camelcase": "Yadl",
       "scope": "source.yadl",
       "highlights": "./queries/highlights.scm",
+      "locals": "./queries/locals.scm",
       "file-types": [
-        ".yadl"
+        "yadl"
       ],
       "injection-regex": "^yadl$"
     }
