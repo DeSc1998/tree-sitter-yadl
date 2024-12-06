@@ -1,9 +1,9 @@
 
 (assignment
-  name: (identifier) @local.definition)
+  (identifier) @local.definition)
 
 (function_call
-  name: (identifier) @local.reference)
+  (identifier) @local.reference)
 
 (function_expression
   (args)
