@@ -61,6 +61,7 @@ module.exports = grammar({
       $.function_call,
       $.dictionary,
       $.array,
+      $.access,
 
       seq("(", $._expression, ")"),
 
@@ -108,6 +109,13 @@ module.exports = grammar({
       "]",
     ),
     _array_entries: $ => seq( $._expression, repeat( seq(",", $._expression) ) ),
+
+    access: $ => seq(
+      choice($.identifier, seq("(", $._expression, ")")),
+      "[",
+      $._expression,
+      "]"
+    ),
 
     identifier: $ => /[a-zA-Z][a-zA-Z0-9_]*/,
     string: $ => choice(

@@ -361,6 +361,10 @@
           "name": "array"
         },
         {
+          "type": "SYMBOL",
+          "name": "access"
+        },
+        {
           "type": "SEQ",
           "members": [
             {
@@ -838,6 +842,49 @@
               }
             ]
           }
+        }
+      ]
+    },
+    "access": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "identifier"
+            },
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "STRING",
+                  "value": "("
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_expression"
+                },
+                {
+                  "type": "STRING",
+                  "value": ")"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "STRING",
+          "value": "["
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_expression"
+        },
+        {
+          "type": "STRING",
+          "value": "]"
         }
       ]
     },

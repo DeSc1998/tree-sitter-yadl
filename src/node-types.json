@@ -1,5 +1,60 @@
 [
   {
+    "type": "access",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "access",
+          "named": true
+        },
+        {
+          "type": "array",
+          "named": true
+        },
+        {
+          "type": "binary_expression",
+          "named": true
+        },
+        {
+          "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "dictionary",
+          "named": true
+        },
+        {
+          "type": "function_call",
+          "named": true
+        },
+        {
+          "type": "function_expression",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "unary_expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "args",
     "named": true,
     "fields": {},
@@ -22,6 +77,10 @@
       "multiple": true,
       "required": false,
       "types": [
+        {
+          "type": "access",
+          "named": true
+        },
         {
           "type": "array",
           "named": true
@@ -74,6 +133,10 @@
       "required": true,
       "types": [
         {
+          "type": "access",
+          "named": true
+        },
+        {
           "type": "array",
           "named": true
         },
@@ -124,6 +187,10 @@
       "multiple": true,
       "required": true,
       "types": [
+        {
+          "type": "access",
+          "named": true
+        },
         {
           "type": "array",
           "named": true
@@ -180,6 +247,10 @@
       "multiple": true,
       "required": true,
       "types": [
+        {
+          "type": "access",
+          "named": true
+        },
         {
           "type": "array",
           "named": true
@@ -272,6 +343,10 @@
       "required": true,
       "types": [
         {
+          "type": "access",
+          "named": true
+        },
+        {
           "type": "array",
           "named": true
         },
@@ -322,6 +397,10 @@
       "multiple": true,
       "required": true,
       "types": [
+        {
+          "type": "access",
+          "named": true
+        },
         {
           "type": "array",
           "named": true
@@ -408,6 +487,10 @@
       "required": true,
       "types": [
         {
+          "type": "access",
+          "named": true
+        },
+        {
           "type": "args",
           "named": true
         },
@@ -490,6 +573,10 @@
       "multiple": false,
       "required": true,
       "types": [
+        {
+          "type": "access",
+          "named": true
+        },
         {
           "type": "array",
           "named": true
@@ -582,6 +669,10 @@
       "multiple": false,
       "required": true,
       "types": [
+        {
+          "type": "access",
+          "named": true
+        },
         {
           "type": "array",
           "named": true
