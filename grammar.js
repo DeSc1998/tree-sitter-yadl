@@ -120,8 +120,8 @@ module.exports = grammar({
 
     identifier: $ => /[a-zA-Z][a-zA-Z0-9_]*/,
     string: $ => choice(
-      /[f]?"[^\n\r]*"/,
-      /[f]?'[^\n\r]*'/,
+      /[f]?"[^\n\r]*?"/,
+      /[f]?'[^\n\r]*?'/,
     ),
     boolean: $ => choice("true", "false"),
     number: $ => choice(

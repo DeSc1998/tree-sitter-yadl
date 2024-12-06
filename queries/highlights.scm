@@ -17,6 +17,8 @@
 (number) @number
 (string) @string
 (boolean) @boolean
+(identifier) @variable
+(comment) @comment
 
 (assignment
   (identifier) @function
@@ -25,6 +27,3 @@
 (function_call
   (identifier) @function.call)
 
-(identifier) @variable
-
-(comment) @comment
