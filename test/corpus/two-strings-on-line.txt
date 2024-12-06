@@ -1,0 +1,14 @@
+=======
+two strings on one line
+=======
+
+return "aoeu" + "aoeu"
+
+-----
+
+(source_file
+  (return_statement
+    (binary_expression
+      (string)
+      (string)))
+  )

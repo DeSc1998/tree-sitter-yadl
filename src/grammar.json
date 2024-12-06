@@ -925,11 +925,11 @@
       "members": [
         {
           "type": "PATTERN",
-          "value": "[f]?\"[^\\n\\r]*?\""
+          "value": "[f]?\"[^\\n\\r\"]*?\""
         },
         {
           "type": "PATTERN",
-          "value": "[f]?'[^\\n\\r]*?'"
+          "value": "[f]?'[^\\n\\r']*?'"
         }
       ]
     },
