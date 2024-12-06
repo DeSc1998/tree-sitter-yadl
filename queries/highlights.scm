@@ -7,6 +7,9 @@
 "and" @keyword
 "or" @keyword
 "not" @keyword
+"true" @keyword
+"false" @keyword
+
 (number) @number
 (string) @string
 
