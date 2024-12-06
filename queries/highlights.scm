@@ -1,14 +1,15 @@
 
-"if" @keyword
-"elif" @keyword
-"else" @keyword
-"return" @keyword
-"while" @keyword
-"and" @keyword
-"or" @keyword
-"not" @keyword
-"true" @keyword
-"false" @keyword
+; "if" @keyword
+; "elif" @keyword
+; "else" @keyword
+; "return" @keyword
+; "while" @keyword
+; "and" @keyword
+; "or" @keyword
+; "not" @keyword
+; "true" @keyword
+; "false" @keyword
+(keywords) @keyword
 
 (number) @number
 (string) @string
