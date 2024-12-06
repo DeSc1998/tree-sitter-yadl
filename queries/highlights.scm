@@ -25,4 +25,6 @@
 (function_call
   (identifier) @function.call)
 
+(identifier) @variable
+
 (comment) @comment
