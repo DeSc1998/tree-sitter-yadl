@@ -329,6 +329,18 @@
       "type": "CHOICE",
       "members": [
         {
+          "type": "SYMBOL",
+          "name": "function_call"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "function_expression"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "access"
+        },
+        {
           "type": "SEQ",
           "members": [
             {
@@ -367,23 +379,11 @@
         },
         {
           "type": "SYMBOL",
-          "name": "function_expression"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "function_call"
-        },
-        {
-          "type": "SYMBOL",
           "name": "dictionary"
         },
         {
           "type": "SYMBOL",
           "name": "array"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "access"
         },
         {
           "type": "SYMBOL",
