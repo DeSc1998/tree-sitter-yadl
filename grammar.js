@@ -43,9 +43,9 @@ module.exports = grammar({
     _loop: $ => choice($.while_loop),
     while_loop: $ => seq("while", $.condition, $.code_block),
 
-    function_call: $ => seq(
-      $.identifier, "(", optional($.call_args) ,")"
-    ),
+    function_call: $ => prec.left(10, seq(
+      $._expression, "(", optional($.call_args) ,")"
+    )),
     call_args: $ => prec(9, seq( $._expression, repeat(seq(",", $._expression)))),
 
     code_block: $ => seq("{", repeat($._statement), "}"),
@@ -70,7 +70,7 @@ module.exports = grammar({
       $.identifier,
     ),
     binary_expression: $ => choice(
-      prec.right(8, seq( $._expression, "^", $._expression )),
+      prec.right(8, seq( $._expression,"^", $._expression )),
       prec.left(6, seq( $._expression, "*", $._expression )),
       prec.left(6, seq( $._expression, "/", $._expression )),
       prec.left(6, seq( $._expression, "%", $._expression )),
