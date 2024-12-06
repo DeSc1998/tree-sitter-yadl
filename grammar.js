@@ -152,6 +152,6 @@ module.exports = grammar({
         /0b[01]+\.[01]+/
     ),
 
-    keywords: $ => /(if)|(elif)|(else)|(while)|(return)|(not)|(and)|(or)|(true)|(false)/,
+    keywords: $ => /if|elif|else|while|return|not|and|or|true|false/,
   }
 });

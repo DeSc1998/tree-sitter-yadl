@@ -1009,7 +1009,7 @@
     },
     "keywords": {
       "type": "PATTERN",
-      "value": "(if)|(elif)|(else)|(while)|(return)|(not)|(and)|(or)|(true)|(false)"
+      "value": "if|elif|else|while|return|not|and|or|true|false"
     }
   },
   "extras": [
