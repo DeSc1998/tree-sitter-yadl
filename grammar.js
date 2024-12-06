@@ -15,6 +15,9 @@ module.exports = grammar({
   rules: {
     source_file: $ => repeat($._statement),
 
+    comment: $ => seq("//", /[^\n\r]*/),
+    _line_end: $ => seq(optional($.comment), choice(/\n/, /\r/, /\r\n/)),
+
     _statement: $ => seq(
       optional(choice(
         $.return_statement,
@@ -56,6 +59,8 @@ module.exports = grammar({
       $.identifier,
       $.function_expression,
       $.function_call,
+      $.dictionary,
+      $.array,
 
       seq("(", $._expression, ")"),
 
@@ -85,13 +90,24 @@ module.exports = grammar({
 
     function_expression: $ => seq(
       "(", optional($.args) ,")", "=>",
-      choice( $._expression, $.code_block )
+      choice($._expression, $.code_block)
     ),
     args: $ => prec(9, seq( $.identifier, repeat(seq(",", $.identifier)))),
 
-    comment: $ => seq("//", /[^\n\r]*/),
+    dictionary: $ => prec(10, seq(
+      "{",
+      optional($._dict_entries),
+      "}",
+    )),
+    _dict_entries: $ => seq( $.dict_entry, repeat( seq(",", $.dict_entry) ) ),
+    dict_entry: $ => seq($._expression, ":", $._expression),
 
-    _line_end: $ => seq(optional($.comment), choice(/\n/, /\r/, /\r\n/)),
+    array: $ => seq(
+      "[",
+      optional($._array_entries),
+      "]",
+    ),
+    _array_entries: $ => seq( $._expression, repeat( seq(",", $._expression) ) ),
 
     identifier: $ => /[a-zA-Z][a-zA-Z0-9_]*/,
     string: $ => choice(
