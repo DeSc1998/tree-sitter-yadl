@@ -10,3 +10,6 @@
 (assignment
   (identifier) @function
   (function_expression))
+(function_call
+  (identifier) @function)
+(comment) @comment
