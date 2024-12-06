@@ -1,0 +1,34 @@
+{
+  "grammars": [
+    {
+      "name": "yadl",
+      "camelcase": "Yadl",
+      "scope": "source.yadl",
+      "file-types": [
+        ".yadl"
+      ],
+      "injection-regex": "^yadl$"
+    }
+  ],
+  "metadata": {
+    "version": "0.1.0",
+    "license": "MIT",
+    "description": "A simple data processing language",
+    "authors": [
+      {
+        "name": "Dennis Schulze"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/DeSc1998/yadl-zig"
+    }
+  },
+  "bindings": {
+    "c": true,
+    "go": true,
+    "node": true,
+    "python": true,
+    "rust": true,
+    "swift": true
+  }
+}
