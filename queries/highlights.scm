@@ -1,15 +1,23 @@
-; highlights.scm
 
 "if" @keyword
 "elif" @keyword
 "else" @keyword
 "return" @keyword
 "while" @keyword
+"and" @keyword
+"or" @keyword
+"not" @keyword
 (number) @number
 (string) @string
+
 (assignment
-  (identifier) @function
+  name: (identifier) @function
   (function_expression))
+
 (function_call
-  (identifier) @function)
+  name: (identifier) @function)
+
+(function_call
+  name: (identifier) @function.buildin (#is-not? local))
+
 (comment) @comment
