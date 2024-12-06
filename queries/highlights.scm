@@ -14,15 +14,6 @@
  "not"
 ] @keyword.operator
 
-[
-  "["
-  "]"
-  "("
-  ")"
-  "{"
-  "}"
-] @punctuation.bracket
-
 (number) @number
 (string) @string
 (boolean) @boolean
