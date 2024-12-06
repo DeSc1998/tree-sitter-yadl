@@ -53,6 +53,11 @@ module.exports = grammar({
     condition: $ => seq("(", $._expression, ")"),
 
     _expression: $ => choice(
+      seq("(", $._expression, ")"),
+
+      $.binary_expression,
+      $.unary_expression,
+
       $.boolean,
       $.number,
       $.string,
@@ -62,11 +67,6 @@ module.exports = grammar({
       $.array,
       $.access,
       $.identifier,
-
-      seq("(", $._expression, ")"),
-
-      $.binary_expression,
-      $.unary_expression,
     ),
     binary_expression: $ => choice(
       prec.right(8, seq( $._expression, "^", $._expression )),
