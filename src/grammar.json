@@ -342,10 +342,6 @@
         },
         {
           "type": "SYMBOL",
-          "name": "identifier"
-        },
-        {
-          "type": "SYMBOL",
           "name": "function_expression"
         },
         {
@@ -363,6 +359,10 @@
         {
           "type": "SYMBOL",
           "name": "access"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "identifier"
         },
         {
           "type": "SEQ",

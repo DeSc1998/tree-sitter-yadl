@@ -56,12 +56,12 @@ module.exports = grammar({
       $.boolean,
       $.number,
       $.string,
-      $.identifier,
       $.function_expression,
       $.function_call,
       $.dictionary,
       $.array,
       $.access,
+      $.identifier,
 
       seq("(", $._expression, ")"),
 
