@@ -665,7 +665,7 @@
         ]
       }
     },
-    "_comment": {
+    "comment": {
       "type": "SEQ",
       "members": [
         {
@@ -686,7 +686,7 @@
           "members": [
             {
               "type": "SYMBOL",
-              "name": "_comment"
+              "name": "comment"
             },
             {
               "type": "BLANK"

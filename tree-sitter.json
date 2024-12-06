@@ -4,6 +4,7 @@
       "name": "yadl",
       "camelcase": "Yadl",
       "scope": "source.yadl",
+      "highlights": "./queries/highlights.scm",
       "file-types": [
         ".yadl"
       ],

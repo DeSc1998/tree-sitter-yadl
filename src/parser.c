@@ -45,7 +45,7 @@ enum ts_symbol_identifiers {
   anon_sym_not = 27,
   anon_sym_EQ_GT = 28,
   anon_sym_SLASH_SLASH = 29,
-  aux_sym__comment_token1 = 30,
+  aux_sym_comment_token1 = 30,
   aux_sym__line_end_token1 = 31,
   aux_sym__line_end_token2 = 32,
   aux_sym__line_end_token3 = 33,
@@ -86,7 +86,7 @@ enum ts_symbol_identifiers {
   sym_unary_expression = 68,
   sym_function_expression = 69,
   sym_args = 70,
-  sym__comment = 71,
+  sym_comment = 71,
   sym__line_end = 72,
   sym_string = 73,
   sym_boolean = 74,
@@ -132,7 +132,7 @@ static const char * const ts_symbol_names[] = {
   [anon_sym_not] = "not",
   [anon_sym_EQ_GT] = "=>",
   [anon_sym_SLASH_SLASH] = "//",
-  [aux_sym__comment_token1] = "_comment_token1",
+  [aux_sym_comment_token1] = "comment_token1",
   [aux_sym__line_end_token1] = "_line_end_token1",
   [aux_sym__line_end_token2] = "_line_end_token2",
   [aux_sym__line_end_token3] = "_line_end_token3",
@@ -173,7 +173,7 @@ static const char * const ts_symbol_names[] = {
   [sym_unary_expression] = "unary_expression",
   [sym_function_expression] = "function_expression",
   [sym_args] = "args",
-  [sym__comment] = "_comment",
+  [sym_comment] = "comment",
   [sym__line_end] = "_line_end",
   [sym_string] = "string",
   [sym_boolean] = "boolean",
@@ -219,7 +219,7 @@ static const TSSymbol ts_symbol_map[] = {
   [anon_sym_not] = anon_sym_not,
   [anon_sym_EQ_GT] = anon_sym_EQ_GT,
   [anon_sym_SLASH_SLASH] = anon_sym_SLASH_SLASH,
-  [aux_sym__comment_token1] = aux_sym__comment_token1,
+  [aux_sym_comment_token1] = aux_sym_comment_token1,
   [aux_sym__line_end_token1] = aux_sym__line_end_token1,
   [aux_sym__line_end_token2] = aux_sym__line_end_token2,
   [aux_sym__line_end_token3] = aux_sym__line_end_token3,
@@ -260,7 +260,7 @@ static const TSSymbol ts_symbol_map[] = {
   [sym_unary_expression] = sym_unary_expression,
   [sym_function_expression] = sym_function_expression,
   [sym_args] = sym_args,
-  [sym__comment] = sym__comment,
+  [sym_comment] = sym_comment,
   [sym__line_end] = sym__line_end,
   [sym_string] = sym_string,
   [sym_boolean] = sym_boolean,
@@ -396,7 +396,7 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
     .visible = true,
     .named = false,
   },
-  [aux_sym__comment_token1] = {
+  [aux_sym_comment_token1] = {
     .visible = false,
     .named = false,
   },
@@ -560,8 +560,8 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
     .visible = true,
     .named = true,
   },
-  [sym__comment] = {
-    .visible = false,
+  [sym_comment] = {
+    .visible = true,
     .named = true,
   },
   [sym__line_end] = {
@@ -1177,7 +1177,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       ACCEPT_TOKEN(anon_sym_SLASH_SLASH);
       END_STATE();
     case 90:
-      ACCEPT_TOKEN(aux_sym__comment_token1);
+      ACCEPT_TOKEN(aux_sym_comment_token1);
       if (lookahead == '\t' ||
           lookahead == 0x0b ||
           lookahead == '\f' ||
@@ -1186,7 +1186,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           (lookahead < '\t' || '\r' < lookahead)) ADVANCE(91);
       END_STATE();
     case 91:
-      ACCEPT_TOKEN(aux_sym__comment_token1);
+      ACCEPT_TOKEN(aux_sym_comment_token1);
       if (lookahead != 0 &&
           lookahead != '\n' &&
           lookahead != '\r') ADVANCE(91);
@@ -1708,7 +1708,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym__loop] = STATE(91),
     [sym_while_loop] = STATE(91),
     [sym_function_call] = STATE(91),
-    [sym__comment] = STATE(101),
+    [sym_comment] = STATE(101),
     [sym__line_end] = STATE(33),
     [aux_sym_source_file_repeat1] = STATE(33),
     [ts_builtin_sym_end] = ACTIONS(3),
@@ -2912,7 +2912,7 @@ static const uint16_t ts_small_parse_table[] = {
     STATE(85), 1,
       sym__initial_if_branch,
     STATE(98), 1,
-      sym__comment,
+      sym_comment,
     ACTIONS(67), 3,
       aux_sym__line_end_token1,
       aux_sym__line_end_token2,
@@ -2966,7 +2966,7 @@ static const uint16_t ts_small_parse_table[] = {
     STATE(85), 1,
       sym__initial_if_branch,
     STATE(101), 1,
-      sym__comment,
+      sym_comment,
     ACTIONS(85), 3,
       aux_sym__line_end_token1,
       aux_sym__line_end_token2,
@@ -2998,7 +2998,7 @@ static const uint16_t ts_small_parse_table[] = {
     STATE(85), 1,
       sym__initial_if_branch,
     STATE(98), 1,
-      sym__comment,
+      sym_comment,
     ACTIONS(93), 3,
       aux_sym__line_end_token1,
       aux_sym__line_end_token2,
@@ -3030,7 +3030,7 @@ static const uint16_t ts_small_parse_table[] = {
     STATE(85), 1,
       sym__initial_if_branch,
     STATE(101), 1,
-      sym__comment,
+      sym_comment,
     ACTIONS(98), 3,
       aux_sym__line_end_token1,
       aux_sym__line_end_token2,
@@ -3062,7 +3062,7 @@ static const uint16_t ts_small_parse_table[] = {
     STATE(85), 1,
       sym__initial_if_branch,
     STATE(98), 1,
-      sym__comment,
+      sym_comment,
     ACTIONS(102), 3,
       aux_sym__line_end_token1,
       aux_sym__line_end_token2,
@@ -3094,7 +3094,7 @@ static const uint16_t ts_small_parse_table[] = {
     STATE(85), 1,
       sym__initial_if_branch,
     STATE(98), 1,
-      sym__comment,
+      sym_comment,
     ACTIONS(106), 3,
       aux_sym__line_end_token1,
       aux_sym__line_end_token2,
@@ -3126,7 +3126,7 @@ static const uint16_t ts_small_parse_table[] = {
     STATE(85), 1,
       sym__initial_if_branch,
     STATE(98), 1,
-      sym__comment,
+      sym_comment,
     ACTIONS(67), 3,
       aux_sym__line_end_token1,
       aux_sym__line_end_token2,
@@ -4298,7 +4298,7 @@ static const uint16_t ts_small_parse_table[] = {
     STATE(87), 1,
       sym__line_end,
     STATE(101), 1,
-      sym__comment,
+      sym_comment,
     ACTIONS(231), 3,
       aux_sym__line_end_token1,
       aux_sym__line_end_token2,
@@ -4309,7 +4309,7 @@ static const uint16_t ts_small_parse_table[] = {
     STATE(83), 1,
       sym__line_end,
     STATE(98), 1,
-      sym__comment,
+      sym_comment,
     ACTIONS(233), 3,
       aux_sym__line_end_token1,
       aux_sym__line_end_token2,
@@ -4462,7 +4462,7 @@ static const uint16_t ts_small_parse_table[] = {
       anon_sym_EQ_GT,
   [3370] = 1,
     ACTIONS(285), 1,
-      aux_sym__comment_token1,
+      aux_sym_comment_token1,
   [3374] = 1,
     ACTIONS(287), 1,
       anon_sym_LBRACE,
@@ -4720,7 +4720,7 @@ static const TSParseActionEntry ts_parse_actions[] = {
   [243] = {.entry = {.count = 1, .reusable = false}}, SHIFT(88),
   [245] = {.entry = {.count = 1, .reusable = true}}, REDUCE(aux_sym_args_repeat1, 2, 0, 0),
   [247] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_args_repeat1, 2, 0, 0), SHIFT_REPEAT(119),
-  [250] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym__comment, 2, 0, 0),
+  [250] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_comment, 2, 0, 0),
   [252] = {.entry = {.count = 1, .reusable = false}}, SHIFT(86),
   [254] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__call_args, 2, 0, 0),
   [256] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_args, 2, 0, 0),

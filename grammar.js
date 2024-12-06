@@ -89,9 +89,9 @@ module.exports = grammar({
     ),
     args: $ => prec(9, seq( $.identifier, repeat(seq(",", $.identifier)))),
 
-    _comment: $ => seq("//", /[^\n\r]*/),
+    comment: $ => seq("//", /[^\n\r]*/),
 
-    _line_end: $ => seq(optional($._comment), choice(/\n/, /\r/, /\r\n/)),
+    _line_end: $ => seq(optional($.comment), choice(/\n/, /\r/, /\r\n/)),
 
     identifier: $ => /[a-zA-Z][a-zA-Z0-9_]*/,
     string: $ => choice(
