@@ -931,13 +931,15 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       if (lookahead == '"') ADVANCE(92);
       if (lookahead != 0 &&
           lookahead != '\n' &&
-          lookahead != '\r') ADVANCE(3);
+          lookahead != '\r' &&
+          lookahead != '\\') ADVANCE(3);
       END_STATE();
     case 4:
       if (lookahead == '\'') ADVANCE(93);
       if (lookahead != 0 &&
           lookahead != '\n' &&
-          lookahead != '\r') ADVANCE(4);
+          lookahead != '\r' &&
+          lookahead != '\\') ADVANCE(4);
       END_STATE();
     case 5:
       if (lookahead == '.') ADVANCE(15);
