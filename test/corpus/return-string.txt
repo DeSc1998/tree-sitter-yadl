@@ -8,9 +8,8 @@ return 'aoeu'
 -----
 
 (source_file
-  (return_statement (string))
-  (return_statement (string))
-  )
+  (return_statement (plane_string))
+  (return_statement (plane_string)))
 =======
 return statement with format string
 =======
@@ -21,6 +20,5 @@ return f'aoeu'
 -----
 
 (source_file
-  (return_statement (string))
-  (return_statement (string))
-  )
+  (return_statement (format_string))
+  (return_statement (format_string)))

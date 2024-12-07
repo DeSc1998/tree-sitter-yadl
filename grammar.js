@@ -64,7 +64,7 @@ module.exports = grammar({
 
       $.boolean,
       $.number,
-      $.string,
+      $._string,
       $.dictionary,
       $.array,
       $.identifier,
@@ -119,10 +119,19 @@ module.exports = grammar({
     )),
 
     identifier: $ => /[a-zA-Z][a-zA-Z0-9_]*/,
-    string: $ => choice(
-      /[f]?"[^\\\n\r"]*?"/,
-      /[f]?'[^\\\n\r']*?'/,
+    _string: $ => choice(
+      $.format_string,
+      $.plane_string,
     ),
+    plane_string: $ => choice(
+      seq("\"", repeat(/[^\n\r"]/ ), "\""),
+      seq("'", repeat(/[^\n\r']/ ), "'"),
+    ),
+    format_string: $ => choice(
+      seq("f\"", repeat(/[^\n\r"]/ ), "\""),
+      seq("f'", repeat(/[^\n\r']/ ), "'"),
+    ),
+
     boolean: $ => choice("true", "false"),
     number: $ => choice(
       $._decimal_number,

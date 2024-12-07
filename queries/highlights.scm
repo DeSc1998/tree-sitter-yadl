@@ -30,7 +30,8 @@
 ] @operator
 
 (number) @number
-(string) @string
+(plane_string) @string
+(format_string) @string
 (boolean) @boolean
 (identifier) @variable
 (comment) @comment

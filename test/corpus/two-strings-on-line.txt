@@ -9,10 +9,10 @@ return 'aoeu' + 'aoeu'
 (source_file
   (return_statement
     (binary_expression
-      (string)
-      (string)))
+      (plane_string)
+      (plane_string)))
   (return_statement
     (binary_expression
-      (string)
-      (string)))
+      (plane_string)
+      (plane_string)))
   )
