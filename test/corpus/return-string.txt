@@ -3,15 +3,24 @@ return statement with string
 =======
 
 return "aoeu"
-return f"aoeu"
 return 'aoeu'
-return f'aoeu'
 
 -----
 
 (source_file
   (return_statement (string))
   (return_statement (string))
+  )
+=======
+return statement with format string
+=======
+
+return f"aoeu"
+return f'aoeu'
+
+-----
+
+(source_file
   (return_statement (string))
   (return_statement (string))
   )
