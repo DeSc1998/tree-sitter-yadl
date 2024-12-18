@@ -94,7 +94,9 @@ module.exports = grammar({
       "(", optional($.args) ,")", "=>",
       choice($._expression, $.code_block)
     ),
-    args: $ => prec(9, seq( $.identifier, repeat(seq(",", $.identifier)))),
+    args: $ => choice(seq($._normal_args, optional($._variadic_args)), $._variadic_args),
+    _normal_args: $ => prec(9, seq( $.identifier, repeat(seq(",", $.identifier)))),
+    _variadic_args: $ => prec(9, seq( $.identifier, "...")),
 
     dictionary: $ => prec(10, seq(
       "{",
