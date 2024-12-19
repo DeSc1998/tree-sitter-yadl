@@ -24,7 +24,7 @@ jobs:
       - name: Build
         if: steps.ts-cli.output.cache-hit != 'true'
         run: |
-          mkdir ts-cli
+          mkdir -p ts-cli
           cargo install --root ts-cli tree-sitter-cli@$TREE_SITTER_VERSION
 
   testing:
