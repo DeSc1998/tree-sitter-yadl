@@ -1,4 +1,19 @@
 =======
+while loop
+=======
+
+while (true) {
+  return 42
+}
+
+-----
+
+(source_file
+  (while_loop 
+    (condition (boolean))
+    (code_block (return_statement (number)))))
+
+=======
 if statement (simple)
 =======
 
