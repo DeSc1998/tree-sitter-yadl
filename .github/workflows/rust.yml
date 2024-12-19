@@ -8,15 +8,34 @@ on:
 
 env:
   CARGO_TERM_COLOR: always
+  TREE_SITTER_VERSION: 0.24.5
 
 jobs:
-  build:
-
+  cache-ts-cli:
     runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Caching tree-sitter-cli
+        id: ts-cli
+        uses: actions/cache@v4
+        with:
+          path: ts-cli
+          key: ts-cli-${{ runner.os }}-${{ env.TREE_SITTER_VERSION }}
+      - name: Build
+        if: steps.ts-cli.output.cache-hit != 'true'
+        run: |
+          mkdir ts-cli
+          cargo install --root ts-cli tree-sitter-cli@$TREE_SITTER_VERSION
 
+  testing:
+    runs-on: ubuntu-latest
+    needs: cache-ts-cli
     steps:
     - uses: actions/checkout@v4
-    - name: Build
-      run: cargo install --root . tree-sitter-cli
+    - name: Caching tree-sitter-cli
+      uses: actions/cache@v4
+      with:
+        path: ts-cli
+        key: ts-cli-${{ runner.os }}-${{ env.TREE_SITTER_VERSION }}
     - name: Run tests
-      run: ./bin/tree-sitter test
+      run: ./ts-cli/bin/tree-sitter test
