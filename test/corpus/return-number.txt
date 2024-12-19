@@ -8,3 +8,85 @@ return 42
 
 (source_file
   (return_statement (number)))
+
+=======
+return statement with number (hex)
+=======
+
+return 0x42
+
+-----
+
+(source_file
+  (return_statement (number)))
+
+=======
+return statement with number (octal)
+=======
+
+return 0o42
+return 0o77
+
+-----
+
+(source_file
+  (return_statement (number))
+  (return_statement (number)))
+
+=======
+return statement with number (bin)
+=======
+
+return 0b1001010101
+
+-----
+
+(source_file
+  (return_statement (number)))
+
+=======
+return statement with number (floating point)
+=======
+
+return 42.42
+
+-----
+
+(source_file
+  (return_statement (number)))
+
+=======
+return statement with number (hex, floating point)
+=======
+
+return 0x42.42
+
+-----
+
+(source_file
+  (return_statement (number)))
+
+=======
+return statement with number (octal, floating point)
+=======
+
+return 0o42.07
+return 0o77.77
+
+-----
+
+(source_file
+  (return_statement (number))
+  (return_statement (number)))
+
+=======
+return statement with number (bin, floating point)
+=======
+
+return 0b1001.010101
+
+-----
+
+(source_file
+  (return_statement (number)))
+
