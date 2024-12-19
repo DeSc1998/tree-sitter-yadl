@@ -22,8 +22,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
 
-    - name: Getting treesitter cli
-      run: npm install tree-sitter-cli
-
-    - name: Run treesitter test
-      run: tree-sitter test
+    - name: Installing and running treesitter cli
+      run: |
+        npm install tree-sitter-cli
+        tree-sitter test
