@@ -1,5 +1,5 @@
 =======
-assignment statement
+assignment of number
 =======
 
 aoeu = 42
@@ -10,6 +10,51 @@ aoeu = 42
   (assignment
     (identifier)
     (number)))
+
+=======
+assignment of unary expression
+=======
+
+aoeu = -42
+
+-----
+
+(source_file
+  (assignment
+    (identifier)
+    (unary_expression (number))))
+
+=======
+assignment with function call (no args)
+=======
+
+aoeu = f()
+
+-----
+
+(source_file
+  (assignment
+    (identifier)
+    (function_call
+      (identifier))))
+
+=======
+assignment with function call
+=======
+
+aoeu = f(1, 2)
+
+-----
+
+(source_file
+  (assignment
+    (identifier)
+    (function_call
+      (identifier)
+      (call_args 
+        (number)
+        (number)))))
+
 
 =======
 assignment of function
