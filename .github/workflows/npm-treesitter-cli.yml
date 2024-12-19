@@ -25,4 +25,4 @@ jobs:
     - name: Installing and running treesitter cli
       run: |
         npm install tree-sitter-cli
-        tree-sitter test
+        npm run tree-sitter test
