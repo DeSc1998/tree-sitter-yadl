@@ -10,3 +10,99 @@ aoeu = 42
   (assignment
     (identifier)
     (number)))
+
+=======
+assignment of function
+=======
+
+aoeu = () => 42
+
+-----
+
+(source_file
+  (assignment
+    (identifier)
+    (function_expression (number))))
+
+=======
+assignment of function with args
+=======
+
+aoeu = (x, y) => x + y + 42
+
+-----
+
+(source_file
+  (assignment
+    (identifier)
+    (function_expression
+      (args
+        (identifier)
+        (identifier))
+      (binary_expression
+        (binary_expression
+          (identifier)
+          (identifier))
+        (number)))))
+
+=======
+assignment of array (empty)
+=======
+
+aoeu = []
+
+-----
+
+(source_file
+  (assignment
+    (identifier)
+    (array)))
+
+=======
+assignment of array
+=======
+
+aoeu = [1, 2, 3, 4]
+
+-----
+
+(source_file
+  (assignment
+    (identifier)
+    (array
+      (number)
+      (number)
+      (number)
+      (number))))
+
+=======
+assignment of dictionary (empty)
+=======
+
+aoeu = {}
+
+-----
+
+(source_file
+  (assignment
+    (identifier)
+    (dictionary)))
+
+=======
+assignment of dictionary
+=======
+
+aoeu = { 'hello': 1, 'world': 2 }
+
+-----
+
+(source_file
+  (assignment
+    (identifier)
+    (dictionary
+      (dict_entry
+        (plane_string)
+        (number))
+      (dict_entry
+        (plane_string)
+        (number)))))
