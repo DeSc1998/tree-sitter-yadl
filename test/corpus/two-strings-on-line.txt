@@ -16,3 +16,23 @@ return 'aoeu' + 'aoeu'
       (plane_string)
       (plane_string)))
   )
+
+=======
+two strings in struct assign
+=======
+
+x['1'] = '1'
+x[1] = 1
+-----
+
+(source_file
+  (assignment
+    (access
+      (identifier)
+      (plane_string))
+    (plane_string))
+  (assignment
+    (access
+      (identifier)
+      (number))
+    (number)))

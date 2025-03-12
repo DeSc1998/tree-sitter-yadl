@@ -30,7 +30,7 @@ module.exports = grammar({
     )),
 
     return_statement: $ => seq("return", $._expression),
-    assignment: $ => seq($.identifier, "=", $._expression),
+    assignment: $ => seq(choice($.access, $.identifier), "=", $._expression),
 
     if_statement: $ => seq(
       $._initial_if_branch,
@@ -113,11 +113,10 @@ module.exports = grammar({
     ),
     _array_entries: $ => seq( $._expression, repeat( seq(",", $._expression) ) ),
 
-    access: $ => prec(1, seq(
+    access: $ => prec.left(1, seq(
       choice($.identifier, seq("(", $._expression, ")")),
-      "[",
-      $._expression,
-      "]"
+      seq("[", $._expression, "]"),
+      repeat(seq("[", $._expression, "]"))
     )),
 
     identifier: $ => /[a-zA-Z][a-zA-Z0-9_]*/,
